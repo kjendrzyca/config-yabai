@@ -46,7 +46,7 @@ echo "Yabai configured for SketchyBar events only - no window management active"
 
 # Gaps
 
-yabai -m config window_gap 8
+yabai -m config window_gap 0
 
 # Window tiling
 yabai -m config layout stack
