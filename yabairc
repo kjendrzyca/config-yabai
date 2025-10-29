@@ -44,9 +44,12 @@ yabai -m signal --add event=display_changed action="/opt/homebrew/bin/sketchybar
 
 echo "Yabai configured for SketchyBar events only - no window management active"
 
-# Gaps
-
-yabai -m config window_gap 0
+# Gaps and padding so borders have breathing room
+yabai -m config window_gap 2
+yabai -m config top_padding 0
+yabai -m config bottom_padding 2
+yabai -m config left_padding 1
+yabai -m config right_padding 1
 
 # Window tiling
 yabai -m config layout stack
@@ -54,3 +57,6 @@ yabai -m config split_type vertical
 
 # Keep specific apps floating / unmanaged as desired
 yabai -m rule --add app="eqMac" manage=off
+
+# Launch window borders with SketchyBar highlight color
+borders  active_color=0xff285577  inactive_color=0xff5f676a  width=2.0  order=above &
