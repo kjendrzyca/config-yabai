@@ -51,3 +51,6 @@ yabai -m config window_gap 0
 # Window tiling
 yabai -m config layout stack
 yabai -m config split_type vertical
+
+# Keep specific apps floating / unmanaged as desired
+yabai -m rule --add app="eqMac" manage=off
