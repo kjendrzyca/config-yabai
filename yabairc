@@ -26,21 +26,21 @@ yabai -m config external_bar all:${TOTAL_TOP_PADDING}:0
 # -----------------------------------------------------------------------------
 
 # Window events
-yabai -m signal --add event=window_created action="/opt/homebrew/bin/sketchybar --trigger windows_update"
-yabai -m signal --add event=window_destroyed action="/opt/homebrew/bin/sketchybar --trigger windows_update"
-yabai -m signal --add event=window_focused action="/opt/homebrew/bin/sketchybar --trigger windows_update"
-yabai -m signal --add event=window_moved action="/opt/homebrew/bin/sketchybar --trigger windows_update"
-yabai -m signal --add event=window_resized action="/opt/homebrew/bin/sketchybar --trigger windows_update"
-yabai -m signal --add event=window_minimized action="/opt/homebrew/bin/sketchybar --trigger windows_update"
-yabai -m signal --add event=window_deminimized action="/opt/homebrew/bin/sketchybar --trigger windows_update"
+yabai -m signal --add event=window_created action="$HOME/.config/sketchybar/plugins/trigger_windows_update.sh window_created"
+yabai -m signal --add event=window_destroyed action="$HOME/.config/sketchybar/plugins/trigger_windows_update.sh window_destroyed"
+yabai -m signal --add event=window_focused action="$HOME/.config/sketchybar/plugins/window_focus_update.sh"
+yabai -m signal --add event=window_moved action="$HOME/.config/sketchybar/plugins/trigger_windows_update.sh window_moved"
+yabai -m signal --add event=window_resized action="$HOME/.config/sketchybar/plugins/trigger_windows_update.sh window_resized"
+yabai -m signal --add event=window_minimized action="$HOME/.config/sketchybar/plugins/trigger_windows_update.sh window_minimized"
+yabai -m signal --add event=window_deminimized action="$HOME/.config/sketchybar/plugins/trigger_windows_update.sh window_deminimized"
 
 # Space events
-yabai -m signal --add event=space_changed action="/opt/homebrew/bin/sketchybar --trigger windows_update"
+yabai -m signal --add event=space_changed action="$HOME/.config/sketchybar/plugins/trigger_windows_update.sh space_changed"
 
 # Display events
-yabai -m signal --add event=display_added action="/opt/homebrew/bin/sketchybar --trigger windows_update"
-yabai -m signal --add event=display_removed action="/opt/homebrew/bin/sketchybar --trigger windows_update"
-yabai -m signal --add event=display_changed action="/opt/homebrew/bin/sketchybar --trigger windows_update"
+yabai -m signal --add event=display_added action="$HOME/.config/sketchybar/plugins/trigger_windows_update.sh display_added"
+yabai -m signal --add event=display_removed action="$HOME/.config/sketchybar/plugins/trigger_windows_update.sh display_removed"
+yabai -m signal --add event=display_changed action="$HOME/.config/sketchybar/plugins/trigger_windows_update.sh display_changed"
 
 echo "Yabai configured for SketchyBar events only - no window management active"
 
